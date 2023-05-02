@@ -1,0 +1,36 @@
+EXCEPTION FOUND : Username already exists!
+be.intecbrussel.simpleblog.data.AccountRepository.registerAccount(AccountRepository.java:28)
+be.intecbrussel.simpleblog.service.AccountService.registerAccount(AccountService.java:18)
+be.intecbrussel.simpleblog.BlogApp.register(BlogApp.java:76)
+be.intecbrussel.simpleblog.BlogApp.main(BlogApp.java:23)
+EXCEPTION FOUND : Username already exists!
+be.intecbrussel.simpleblog.data.AccountRepository.registerAccount(AccountRepository.java:28)
+be.intecbrussel.simpleblog.service.AccountService.registerAccount(AccountService.java:18)
+be.intecbrussel.simpleblog.BlogApp.register(BlogApp.java:76)
+be.intecbrussel.simpleblog.BlogApp.main(BlogApp.java:23)
+EXCEPTION FOUND : Username and password combination is incorrect
+be.intecbrussel.simpleblog.service.AccountService.login(AccountService.java:32)
+be.intecbrussel.simpleblog.BlogApp.login(BlogApp.java:59)
+be.intecbrussel.simpleblog.BlogApp.main(BlogApp.java:26)
+DEBUG: Username already exists!
+be.intecbrussel.simpleblog.data.AccountRepository.registerAccount(AccountRepository.java:28)
+be.intecbrussel.simpleblog.service.AccountService.registerAccount(AccountService.java:18)
+be.intecbrussel.simpleblog.BlogApp.register(BlogApp.java:76)
+be.intecbrussel.simpleblog.BlogApp.main(BlogApp.java:23)
+WARNING: Username and password combination is incorrect
+be.intecbrussel.simpleblog.service.AccountService.login(AccountService.java:32)
+be.intecbrussel.simpleblog.BlogApp.login(BlogApp.java:59)
+be.intecbrussel.simpleblog.BlogApp.main(BlogApp.java:26)
+ERROR: Everything works as expected
+be.intecbrussel.simpleblog.BlogApp.displayAllAccounts(BlogApp.java:44)
+be.intecbrussel.simpleblog.BlogApp.main(BlogApp.java:29)
+WARNING: Username and password combination is incorrect
+be.intecbrussel.simpleblog.service.AccountService.login(AccountService.java:32)
+be.intecbrussel.simpleblog.BlogApp.login(BlogApp.java:60)
+be.intecbrussel.simpleblog.BlogApp.main(BlogApp.java:26)
+ERROR: Everything works as expected
+be.intecbrussel.simpleblog.BlogApp.displayAllAccounts(BlogApp.java:44)
+be.intecbrussel.simpleblog.BlogApp.main(BlogApp.java:29)
+ERROR: Everything works as expected
+be.intecbrussel.simpleblog.BlogApp.displayAllAccounts(BlogApp.java:44)
+be.intecbrussel.simpleblog.BlogApp.main(BlogApp.java:29)

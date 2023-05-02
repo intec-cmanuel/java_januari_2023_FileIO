@@ -3,28 +3,34 @@ package be.intecbrussel.simpleblog;
 import be.intecbrussel.simpleblog.data.AccountRepository;
 import be.intecbrussel.simpleblog.model.Account;
 import be.intecbrussel.simpleblog.service.AccountService;
+import be.intecbrussel.simpleblog.service.LoggingService;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
 public class BlogApp {
+    private static LoggingService loggingService = new LoggingService();
     public static void main(String[] args) {
-        System.out.println("Hello, welcome to ManuelOSX");
-        System.out.println("Do you want to register(1) or login(2)");
-        Scanner scanner = new Scanner(System.in);
-        int choice = scanner.nextInt();
+        appRunning : while (true){
+            System.out.println("Hello, welcome to ManuelOSX");
+            System.out.println("Do you want to register(1) or login(2) or exit(4)");
+            Scanner scanner = new Scanner(System.in);
+            int choice = scanner.nextInt();
 
-        switch(choice) {
-            case 1:
-                register();
-                break;
-            case 2:
-                login();
-                break;
-            case 3:
-                displayAllAccounts();
-                break;
+            switch (choice) {
+                case 1:
+                    register();
+                    break;
+                case 2:
+                    login();
+                    break;
+                case 3:
+                    displayAllAccounts();
+                    break;
+                case 4:
+                    break appRunning;
+            }
         }
 
         System.out.println("Thank you for shopping with us!");
@@ -35,8 +41,10 @@ public class BlogApp {
             AccountService accountService = new AccountService();
             List<Account> accounts = accountService.readAllAccounts();
             accounts.forEach(System.out::println);
+            throw new IOException("Everything works as expected");
         } catch (IOException e) {
-            e.printStackTrace();
+            loggingService.error(e);
+            System.err.println("Something went wrong displaying all accounts. Please dont contact me.");
         }
     }
 
@@ -52,7 +60,8 @@ public class BlogApp {
             Account account = accountService.login(username, password);
             System.out.println(account.getUsername() + " has succesfully logged in!");
         } catch (IOException e) {
-            e.printStackTrace();
+            loggingService.warn(e);
+            System.err.println("Something went wrong logging in. HELP");
         }
     }
 
@@ -67,8 +76,36 @@ public class BlogApp {
             AccountService accountService = new AccountService();
             accountService.registerAccount(username, password);
         } catch (IOException e) {
-            e.printStackTrace();
+            loggingService.debug(e);
+            System.err.println("SEND HELP NOW!");
         }
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
